@@ -1,0 +1,54 @@
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        ArrayList arrayList = new ArrayList();
+
+        while (true)
+        {
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1. Dodaj");
+            Console.WriteLine("2. Usuń");
+            Console.WriteLine("3. Wyświetl");
+            Console.WriteLine("4. Zakończ");
+
+            Console.Write("Wybierz opcję: ");
+            int choice = int.Parse(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    Console.Write("Podaj element do dodania: ");
+                    int elementToAdd = int.Parse(Console.ReadLine());
+                    arrayList.Add(elementToAdd);
+                    break;
+
+                case 2:
+                    Console.Write("Podaj element do usunięcia: ");
+                    int elementToRemove = int.Parse(Console.ReadLine());
+                    arrayList.Remove(elementToRemove);
+                    break;
+
+                case 3:
+                    Console.WriteLine("Elementy w liście:");
+                    foreach (var element in arrayList)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+
+                case 4:
+                    Console.WriteLine("Do zobaczenia!");
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.WriteLine("Nieprawidłowa opcja. Spróbuj ponownie.");
+                    break;
+            }
+        }
+    }
+}
